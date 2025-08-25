@@ -57,7 +57,7 @@
 
   &__text {
     color: $white;
-    font: 400 18px/1.6 $font;
+    font: 400 18px/1.6 $font-primary;
     margin: 0;
   }
 
@@ -65,13 +65,13 @@
     padding-left: 60px;
 
     &-name {
-      font: 500 20px $font;
+      font: 500 20px $font-primary;
       color: $green;
       margin-top: 10px;
     }
 
     &-title {
-      font: 400 18px $font;
+      font: 400 18px $font-primary;
       color: $white;
     }
   }

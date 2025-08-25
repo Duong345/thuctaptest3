@@ -7,7 +7,7 @@
 @mixin btn-base {
   border: none;
   border-radius: $radius-md;
-  font: 500 16px $font;
+  font: 500 $text-base $font-primary;
   cursor: pointer;
   height: 50px;
   transition: all 0.3s ease;
@@ -29,7 +29,10 @@
 }
 
 @mixin section-text {
-  font: 500 16px/100% $font;
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: $text-base;
+  line-height: 100%;
   color: $dark;
   padding-bottom: 50px;
 }

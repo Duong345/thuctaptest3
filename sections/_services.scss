@@ -22,10 +22,11 @@
   align-items: center;
 
   &--green {
-    background: $green;
+    @extend .bg-color-green;
   }
+
   &--black {
-    background: $dark;
+    @extend .bg-color-dark;
   }
 
   &__content {
@@ -56,7 +57,9 @@
   &__title {
     text-align: center;
     border-radius: 10px;
-    font: 500 30px $font;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: $text-4xl;
     margin-bottom: 0;
     height: 50px;
     background: $green;
@@ -68,13 +71,13 @@
     }
 
     &--white {
-      color: $dark;
+      @extend .text-color-dark;
     }
   }
 
   &--green &__title,
   &--black &__title {
-    background: $white;
+    @extend .bg-color-white;
   }
 
   &:nth-child(4) &__title {
@@ -101,10 +104,13 @@
   }
 
   &__link-text {
-    font: 500 20px/150% $font;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: $text-xl;
+    line-height: 150%;
 
     &--white {
-      color: $dark;
+      @extend .text-color-dark;
     }
   }
 }

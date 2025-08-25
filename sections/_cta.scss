@@ -15,12 +15,12 @@
   }
 
   &__title {
-    font: 500 30px $font;
+    font: 500 30px $font-primary;
     color: $dark;
   }
 
   &__text {
-    font: 400 18px/1.5 $font;
+    font: 400 18px/1.5 $font-primary;
     color: $dark;
     padding: 40px 0;
   }

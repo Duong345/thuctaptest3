@@ -17,7 +17,7 @@
     flex: 1;
     padding-left: 300px;
 
-    @media (min-width: 1024px) {
+    @include desktop {
       display: flex !important;
       position: static !important;
       width: auto !important;
@@ -28,7 +28,38 @@
       margin: 0 !important;
     }
 
-    @media (max-width: 1023px) {
+    @include mobile {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      flex-direction: column;
+      background: $white;
+      border-top: 1px solid #ccc;
+      padding: 20px 0;
+      margin-top: 0;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+      &.mobile-active {
+        display: flex !important;
+      }
+
+      li {
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        list-style: none;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    @include tablet {
       display: none !important;
       position: absolute;
       top: 100%;
@@ -63,7 +94,7 @@
   &__link {
     text-decoration: none;
     color: $dark;
-    font: 400 16px $font;
+    font: 400 $text-base $font-primary;
     white-space: nowrap;
     padding: 10px 0;
     transition: color 0.3s ease;
@@ -73,8 +104,14 @@
       color: $green;
     }
 
-    @media (max-width: 1023px) {
-      font-size: 18px !important;
+    @include mobile {
+      font-size: $text-lg !important;
+      padding: 15px 20px !important;
+      display: block !important;
+    }
+
+    @include tablet {
+      font-size: $text-lg !important;
       padding: 15px 20px !important;
       display: block !important;
     }
@@ -84,7 +121,7 @@
 .logo {
   display: flex;
   align-items: center;
-  font: 600 28px $font;
+  font: 600 $text-3xl $font-primary;
   color: $dark;
   min-width: 200px;
 
@@ -95,20 +132,23 @@
     flex-shrink: 0;
   }
 
-  @media (max-width: 1023px) {
+  @include mobile {
     position: absolute !important;
     left: 0 !important;
-    font-size: 24px !important;
+    font-size: $text-xl !important;
     min-width: auto !important;
-  }
-
-  @media (max-width: 767px) {
-    font-size: 20px !important;
 
     &__icon {
       width: 20px !important;
       height: 20px !important;
     }
+  }
+
+  @include tablet {
+    position: absolute !important;
+    left: 0 !important;
+    font-size: $text-2xl !important;
+    min-width: auto !important;
   }
 }
 
@@ -117,7 +157,7 @@
   background: none;
   border: 1px solid $dark;
   border-radius: $radius-sm;
-  font-size: 24px;
+  font-size: $text-2xl;
   cursor: pointer;
   padding: 8px;
   width: 44px;
@@ -140,14 +180,15 @@
     outline-offset: 2px;
   }
 
-  @media (max-width: 1023px) {
+  @include mobile {
     display: flex !important;
-  }
-
-  @media (max-width: 767px) {
-    font-size: 20px !important;
+    font-size: $text-xl !important;
     width: 40px !important;
     height: 40px !important;
     padding: 8px !important;
+  }
+
+  @include tablet {
+    display: flex !important;
   }
 }

@@ -30,11 +30,11 @@
   }
 
   &__number {
-    font: 500 60px/100% $font;
+    font: 500 60px/100% $font-primary;
   }
 
   &__title {
-    font: 500 30px/100% $font;
+    font: 500 30px/100% $font-primary;
     color: $dark;
     @include flex-center;
     padding-left: 20px;
@@ -47,6 +47,6 @@
 
   &__text {
     padding: 40px;
-    font-family: $font;
+    font-family: $font-primary;
   }
 }

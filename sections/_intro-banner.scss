@@ -11,11 +11,17 @@
   }
 
   &__title {
-    font: 500 60px/100% $font;
+    font-family: $font-primary;
+    font-weight: 500;
+    font-size: $text-6xl;
+    line-height: 100%;
   }
 
   &__description {
-    font: 400 20px/150% $font;
+    font-family: $font-primary;
+    font-weight: 400;
+    font-size: $text-xl;
+    line-height: 150%;
     color: $dark;
     padding: 30px 0;
   }

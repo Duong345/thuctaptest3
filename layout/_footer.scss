@@ -28,7 +28,7 @@
 
   &__link {
     color: $white;
-    font: 400 16px $font;
+    font: 400 $text-base $font-primary;
     text-decoration: none;
   }
 
@@ -67,7 +67,7 @@
       width: 100px;
       background: $green;
       color: $dark;
-      font: 500 20px $font;
+      font: 500 $text-xl $font-primary;
     }
 
     &-address {
