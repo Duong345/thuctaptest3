@@ -1,0 +1,45 @@
+.case-studies {
+  &__container {
+    background: $dark;
+    border-radius: 40px;
+    height: 270px;
+    padding: 50px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+  }
+}
+
+.case-study {
+  padding: 0 40px;
+  border-right: 0.1px solid $white;
+  align-items: flex-start;
+  justify-self: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &__text {
+    font: 400 18px $font;
+    color: $white;
+  }
+
+  &__link {
+    display: flex;
+    padding-top: 30px;
+  }
+
+  &__link-text {
+    text-decoration: none;
+    color: $green;
+  }
+
+  &__arrow {
+    margin-left: 20px;
+  }
+}
