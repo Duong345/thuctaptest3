@@ -1,0 +1,110 @@
+.services {
+  padding: 50px 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+}
+
+.service-card {
+  display: flex;
+  width: 550px;
+  height: 270px;
+  background: $light-gray;
+  border: 1px solid $dark;
+  border-radius: $radius-xl;
+  margin-top: 50px;
+  @include card-shadow;
+  align-items: center;
+
+  &--green {
+    background: $green;
+  }
+  &--black {
+    background: $dark;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 210px;
+    height: 170px;
+    padding-right: 60px;
+
+    &--email {
+      padding-left: 80px;
+    }
+    &--content {
+      padding-left: 90px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    border-radius: 10px;
+    font: 500 30px $font;
+    margin-bottom: 0;
+    height: 50px;
+    background: $green;
+    width: 190px;
+
+    &:nth-child(2) {
+      width: 170px;
+      margin-bottom: 80px;
+    }
+
+    &--white {
+      color: $dark;
+    }
+  }
+
+  &--green &__title,
+  &--black &__title {
+    background: $white;
+  }
+
+  &:nth-child(4) &__title {
+    width: 100px;
+
+    &:nth-child(2) {
+      width: 160px;
+    }
+  }
+
+  &:nth-child(5) &__title {
+    width: 120px;
+
+    &:nth-child(2) {
+      width: 130px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  &__link-text {
+    font: 500 20px/150% $font;
+
+    &--white {
+      color: $dark;
+    }
+  }
+}
