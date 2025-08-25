@@ -1,0 +1,177 @@
+.process-step {
+  border: $dark solid 1px;
+  background: $light-gray;
+  width: 100%;
+  max-width: 1234px;
+  height: auto;
+  min-height: 160px;
+  border-radius: $radius-xl;
+  @include card-shadow;
+  margin: 40px auto;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &--active {
+    background: $green;
+    min-height: 280px;
+  }
+
+  &__header {
+    display: flex;
+    padding: 46px 40px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .process-step--active & {
+      padding: 40px;
+      border-bottom: 1px solid $dark;
+    }
+
+    &:hover {
+      background-color: rgba(185, 255, 102, 0.1);
+    }
+  }
+
+  &__number {
+    font: 500 60px/100% $font-primary;
+    color: $dark;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font: 500 30px/100% $font-primary;
+    color: $dark;
+    padding-left: 20px;
+    flex: 1;
+    text-align: left;
+  }
+
+  &__toggle {
+    width: 58px;
+    height: 58px;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: $green;
+    }
+
+    // Icon + mặc định
+    &::before {
+      content: "+";
+      font-size: 24px;
+      font-weight: 500;
+      color: $dark;
+      transition: all 0.3s ease;
+    }
+
+    // Icon - khi active
+    .process-step--active & {
+      &::before {
+        content: "−";
+        font-size: 28px;
+      }
+    }
+  }
+
+  &__text {
+    padding: 0 40px 40px 40px;
+    font-family: $font-primary;
+    font-size: 18px;
+    line-height: 1.6;
+    color: $dark;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    .process-step--active & {
+      opacity: 1;
+      max-height: 200px;
+      padding-top: 20px;
+    }
+  }
+
+  // Responsive cho mobile
+  @media (max-width: 767px) {
+    margin: 20px auto;
+
+    &__header {
+      padding: 30px 20px;
+
+      .process-step--active & {
+        padding: 30px 20px 20px 20px;
+      }
+    }
+
+    &__number {
+      font-size: 36px;
+    }
+
+    &__title {
+      font-size: 18px;
+      padding-left: 15px;
+    }
+
+    &__toggle {
+      width: 40px;
+      height: 40px;
+
+      &::before {
+        font-size: 18px;
+      }
+
+      .process-step--active & {
+        &::before {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__text {
+      padding: 0 20px 30px 20px;
+      font-size: 16px;
+
+      .process-step--active & {
+        max-height: 300px;
+      }
+    }
+  }
+
+  // Responsive cho tablet
+  @media (min-width: 768px) and (max-width: 1023px) {
+    &__header {
+      padding: 40px 30px;
+
+      .process-step--active & {
+        padding: 35px 30px 25px 30px;
+      }
+    }
+
+    &__number {
+      font-size: 48px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__text {
+      padding: 0 30px 35px 30px;
+
+      .process-step--active & {
+        max-height: 250px;
+      }
+    }
+  }
+}

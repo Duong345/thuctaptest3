@@ -1,0 +1,211 @@
+.header {
+  background: $white;
+  position: relative;
+  z-index: 10000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  gap: 40px;
+  position: relative;
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    flex: 1;
+    padding-left: 300px;
+
+    @include desktop {
+      display: flex !important;
+      position: static !important;
+      width: auto !important;
+      flex-direction: row !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 0 0 300px !important;
+      margin: 0 !important;
+    }
+
+    @include mobile {
+      display: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      background: $white;
+      padding: 80px 20px 20px 20px;
+      margin: 0;
+      text-align: center;
+      z-index: 9999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      overflow-y: auto;
+
+      &.mobile-active {
+        display: flex !important;
+      }
+
+      li {
+        padding: 15px 0;
+        list-style: none;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+
+    @include tablet {
+      display: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      background: $white;
+      padding: 80px 20px 20px 20px;
+      margin: 0;
+      text-align: center;
+      z-index: 9999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      overflow-y: auto;
+
+      &.mobile-active {
+        display: flex !important;
+      }
+
+      li {
+        padding: 15px 0;
+        list-style: none;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $dark;
+    font: 400 $text-base $font-primary;
+    white-space: nowrap;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    display: block;
+
+    &:hover {
+      color: $green;
+    }
+
+    @include mobile {
+      font-size: $text-lg !important;
+      padding: 15px 20px !important;
+      display: block !important;
+    }
+
+    @include tablet {
+      font-size: $text-lg !important;
+      padding: 15px 20px !important;
+      display: block !important;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font: 600 $text-3xl $font-primary;
+  color: $dark;
+  min-width: 200px;
+
+  &__icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  @include mobile {
+    position: absolute !important;
+    left: 0 !important;
+    font-size: $text-xl !important;
+    min-width: auto !important;
+
+    &__icon {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  @include tablet {
+    position: absolute !important;
+    left: 0 !important;
+    font-size: $text-2xl !important;
+    min-width: auto !important;
+  }
+}
+
+.mobile-menu-toggle {
+  display: none; // Ẩn mặc định trên desktop
+  background: none;
+  border: 1px solid $dark;
+  border-radius: $radius-sm;
+  font-size: $text-2xl;
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
+  @include flex-center;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+
+  &:hover {
+    background: $green;
+    border-color: $green;
+  }
+
+  &:focus {
+    outline: 2px solid $green;
+    outline-offset: 2px;
+  }
+
+  // Chỉ hiển thị trên mobile và tablet
+  @include mobile {
+    display: flex !important;
+    font-size: $text-xl !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+  }
+
+  @include tablet {
+    display: flex !important;
+  }
+
+  @include desktop {
+    display: none !important;
+  }
+}
