@@ -1,0 +1,25 @@
+$colors: (
+  "green": $green,
+  "dark": $dark,
+  "light-gray": $light-gray,
+  "dark-gray": $dark-gray,
+  "white": $white,
+);
+
+@each $name, $color in $colors {
+  .bg-color-#{$name} {
+    background: $color;
+  }
+}
+
+$text-colors: (
+  "green": $green,
+  "dark": $dark,
+  "white": $white,
+);
+
+@each $name, $color in $text-colors {
+  .text-color-#{$name} {
+    color: $color;
+  }
+}
