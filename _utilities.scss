@@ -1,31 +1,25 @@
-.bg-color-green {
-  background: $green;
+$colors: (
+  "green": $green,
+  "dark": $dark,
+  "light-gray": $light-gray,
+  "dark-gray": $dark-gray,
+  "white": $white,
+);
+
+@each $name, $color in $colors {
+  .bg-color-#{$name} {
+    background: $color;
+  }
 }
 
-.bg-color-dark {
-  background: $dark;
-}
+$text-colors: (
+  "green": $green,
+  "dark": $dark,
+  "white": $white,
+);
 
-.bg-color-light-gray {
-  background: $light-gray;
-}
-
-.bg-color-dark-gray {
-  background: $dark-gray;
-}
-
-.bg-color-white {
-  background: $white;
-}
-
-.text-color-green {
-  color: $green;
-}
-
-.text-color-dark {
-  color: $dark;
-}
-
-.text-color-white {
-  color: $white;
+@each $name, $color in $text-colors {
+  .text-color-#{$name} {
+    color: $color;
+  }
 }

@@ -165,7 +165,7 @@
 }
 
 .mobile-menu-toggle {
-  display: none; // Ẩn mặc định trên desktop
+  display: none;
   background: none;
   border: 1px solid $dark;
   border-radius: $radius-sm;
@@ -192,7 +192,6 @@
     outline-offset: 2px;
   }
 
-  // Chỉ hiển thị trên mobile và tablet
   @include mobile {
     display: flex !important;
     font-size: $text-xl !important;

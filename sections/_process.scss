@@ -66,7 +66,6 @@
       background: $green;
     }
 
-    // Icon + mặc định
     &::before {
       content: "+";
       font-size: 24px;
@@ -75,7 +74,6 @@
       transition: all 0.3s ease;
     }
 
-    // Icon - khi active
     .process-step--active & {
       &::before {
         content: "−";
@@ -102,7 +100,6 @@
     }
   }
 
-  // Responsive cho mobile
   @media (max-width: 767px) {
     margin: 20px auto;
 
@@ -148,7 +145,6 @@
     }
   }
 
-  // Responsive cho tablet
   @media (min-width: 768px) and (max-width: 1023px) {
     &__header {
       padding: 40px 30px;
